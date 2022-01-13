@@ -1,0 +1,8 @@
+# This file describes a Fastly Compute@Edge package. To learn more visit:
+# https://developer.fastly.com/reference/fastly-toml/
+
+manifest_version = 2
+name = "Starter kit for JavaScript using Vite"
+description = "A basic starter kit that demonstrates routing, simple synthetic responses and overriding caching rules."
+authors = []
+language = "javascript"

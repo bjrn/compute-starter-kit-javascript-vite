@@ -1,0 +1,28 @@
+{
+  "name": "dynamic-framework-starter-vite",
+  "private": true,
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bjrn/compute-starter-kit-javascript-vite.git"
+  },
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "deploy": "npm run build && fastly compute deploy",
+    "start": "fastly compute serve --watch",
+    "build": "npm run build:worker && npm run build:wasm",
+    "build:worker": "vite build --ssr src/index.jsx --outDir bin",
+    "build:wasm": "js-compute-runtime --skip-pkg bin/index.js bin/main.wasm"
+  },
+  "dependencies": {
+    "preact": "^10.6.4",
+    "preact-render-to-string": "^5.1.19"
+  },
+  "devDependencies": {
+    "@fastly/js-compute": "^0.2.1",
+    "@preact/preset-vite": "^2.1.7",
+    "prettier": "2.5.1",
+    "vite": "^2.7.10"
+  }
+}
